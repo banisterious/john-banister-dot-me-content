@@ -9,19 +9,5 @@
         "name": "John Banister"
     },
     "items": [
-        {
-            "id": "https://johnbanister.me/johnbanisterme-2/",
-            "url": "https://johnbanister.me/johnbanisterme-2/",
-            "title": "johnbanister.me",
-            "summary": "stuational content consultative service next to aragain falls frigid river, aragain province, 24-77-2 this space intentionally left blank",
-            "content_html": "<div class=\"home\">\n<p>stuational content consultative service</p>\n<p>next to aragain falls</p>\n<p>frigid river, aragain province, 24-77-2</p>\n<p class=\"spaceblank\">this space intentionally left blank</p>\n</div>",
-            "author": {
-                "name": "John Banister"
-            },
-            "tags": [
-            ],
-            "date_published": "2024-12-01T20:27:09-08:00",
-            "date_modified": "2024-12-02T00:47:52-08:00"
-        }
     ]
 }

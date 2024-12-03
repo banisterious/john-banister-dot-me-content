@@ -3,35 +3,10 @@
     <title>johnbanister.me</title>
     <link href="https://johnbanister.me/feed.xml" rel="self" />
     <link href="https://johnbanister.me" />
-    <updated>2024-12-02T00:47:52-08:00</updated>
+    <updated>1969-12-31T16:00:00-08:00</updated>
     <author>
         <name>John Banister</name>
     </author>
     <id>https://johnbanister.me</id>
 
-    <entry>
-        <title>johnbanister.me</title>
-        <author>
-            <name>John Banister</name>
-        </author>
-        <link href="https://johnbanister.me/johnbanisterme-2/"/>
-        <id>https://johnbanister.me/johnbanisterme-2/</id>
-
-        <updated>2024-12-01T20:27:09-08:00</updated>
-            <summary>
-                <![CDATA[
-                    stuational content consultative service next to aragain falls frigid river, aragain province, 24-77-2 this space intentionally left blank
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <div class="home">
-<p>stuational content consultative service</p>
-<p>next to aragain falls</p>
-<p>frigid river, aragain province, 24-77-2</p>
-<p class="spaceblank">this space intentionally left blank</p>
-</div>
-            ]]>
-        </content>
-    </entry>
 </feed>
