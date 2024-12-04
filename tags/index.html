@@ -17,4 +17,13 @@
                   this.classList.add('is-loaded');
                }, false);
          }
-      }</script></body></html>
+      }</script><script src="https://johnbanister.me/media/plugins/pagePrefetching/quicklink.umd.js"></script><script>window.addEventListener('load', () => {
+					quicklink.listen({
+						prerender: false,
+						el: document.querySelector('body'),
+						delay: 0,
+						limit: Infinity,
+						throttle: Infinity,
+						timeout: 2000
+					});
+				});</script></body></html>
