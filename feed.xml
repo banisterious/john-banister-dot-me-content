@@ -3,7 +3,7 @@
     <title>johnbanister.me</title>
     <link href="https://johnbanister.me/feed.xml" rel="self" />
     <link href="https://johnbanister.me" />
-    <updated>2024-12-05T19:59:09-08:00</updated>
+    <updated>2024-12-05T20:05:12-08:00</updated>
     <author>
         <name>John Banister</name>
     </author>
@@ -29,9 +29,7 @@
                 <h2>Portland Bound Coastal Starlight Train</h2>
 <h3><a href="https://aporee.org/maps/?loc=65654&amp;m=satellite"  class="extlink "  >Amtrak Journey (September 19, 2024)</a></h3>
 <p>Northbound Amtrak Coastal Starlight train from Oakland (starting at 2:45 AM Pacific time) with stops in Martinez and Milpitas. Recorded on a Zoom H1 portable recorder.</p>
-<div>
-<div style="position: relative; padding-top: 56.25%;"><div class="post__iframe"><iframe loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://aporee.org/maps/work/export/?loc=65654&amp;m=satellite" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div>
-</div>
+<div class="post__iframe"><iframe loading="lazy" width="500" height="300" src="https://aporee.org/maps/work/export/?loc=65654&amp;m=satellite"></iframe></div>
             ]]>
         </content>
     </entry>
