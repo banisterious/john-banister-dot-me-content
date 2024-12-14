@@ -3,7 +3,7 @@
     <title>johnbanister.me</title>
     <link href="https://johnbanister.me/feed.xml" rel="self" />
     <link href="https://johnbanister.me" />
-    <updated>2024-12-13T21:30:05-08:00</updated>
+    <updated>2024-12-13T21:35:07-08:00</updated>
     <author>
         <name>John Banister</name>
     </author>
@@ -20,14 +20,14 @@
         <updated>2024-12-13T21:27:44-08:00</updated>
             <summary>
                 <![CDATA[
-                    &lt;h2&gt;A Good Explanation&lt;/h2&gt; &lt;p&gt;Created out of "found" videotape footage (my 1990s personal collection), this illustrates the downside to not being on time to school assembly,&hellip;
+                    &lt;h2&gt;A Good Explanation&lt;/h2&gt; &lt;p&gt;Created out of "found" videotape footage (my 1990s personal collection), this illustrates the pitfalls of not taking time management seriously and being&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                 <p>&lt;h2&gt;A Good Explanation&lt;/h2&gt;</p>
-<p>&lt;p&gt;Created out of "found" videotape footage (my 1990s personal collection), this illustrates the downside to not being on time to school assembly, and how to not try to explain your way out of the inevitable consequences&lt;/p&gt;</p>
-<p>&lt;p&gt;&lt;iframe id="ytplayer" type="text/html" width="640" height="360"<br>  src="https://www.youtube.com/embed/-rq9z1wo-84?autoplay=1&amp;origin=http://johnbanister.me"<br>  frameborder="0"&gt;&lt;/iframe&gt;&lt;/p&gt;</p>
+<p>&lt;p&gt;Created out of "found" videotape footage (my 1990s personal collection), this illustrates the pitfalls of not taking time management seriously and being late to school assembly, and how not to try to explain your way out of the inevitable consequences.&lt;/p&gt;</p>
+<p>&lt;p&gt;&lt;iframe id="ytplayer" type="text/html" width="640" height="360"<br>  src="https://www.youtube.com/embed/-rq9z1wo-84?autoplay=0&amp;origin=http://johnbanister.me"<br>  frameborder="0"&gt;&lt;/iframe&gt;&lt;/p&gt;</p>
             ]]>
         </content>
     </entry>
