@@ -1,1 +1,1 @@
-# john-banister-dot-me-dev
+# john-banister-dev
