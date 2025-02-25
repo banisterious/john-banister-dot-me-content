@@ -18,6 +18,9 @@ jobs:
         with:
           hugo-version: 'latest'
 
+      - name: Install Theme
+        run: git submodule update --init --recursive
+
       - name: Build the Hugo site
         run: hugo --minify --cleanDestinationDir --config config/_default/config.production.toml
 
