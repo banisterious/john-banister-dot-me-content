@@ -30,4 +30,4 @@ jobs:
           personal_token: ${{ secrets.GH_PAT }}
           publish_dir: ./docs  # Make sure Hugo outputs to docs/
           publish_branch: gh-pages
-          force_orphan: true  # Ensures a clean deploy
+          force_orphan: true  # This ensures old files are fully deleted before new ones are pushed
