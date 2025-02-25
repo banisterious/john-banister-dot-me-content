@@ -3,7 +3,7 @@ name: Deploy Hugo Site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this if your main branch is different
+      - main  # Change this if your main branch is different.
 
 jobs:
   deploy:
