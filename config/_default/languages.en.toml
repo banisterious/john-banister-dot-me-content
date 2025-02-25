@@ -1,0 +1,19 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "johnbanister.me"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "January 2, 2006"
+author = { name = "John Banister" }
+logo = "sparth-wr-logo.png"
+
+[author]
+links = [ { github = "https://github.com/banisterious" }, { linkedin = "https://www.linkedin.com/in/john-banister-0534b6" }, { patreon = "https://www.patreon.com/JohnBanister" } ]
+
+[params.author]
+image = "author.jpeg"

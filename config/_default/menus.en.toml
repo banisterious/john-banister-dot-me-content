@@ -1,0 +1,33 @@
+[[main]]
+none = "none"
+
+[[main]]
+name = "Listen"
+pre = "lucide-audio-lines"
+pageRef = "listen"
+identifier = "xT7holZvME"
+weight = 1111
+
+[[main]]
+name = "Github"
+pre = "lucide-github"
+url = "https://github.com/banisterious"
+identifier = "sY5pObj6g0"
+weight = 2222
+
+[[main]]
+name = "Patreon"
+pre = "patreon"
+url = "https://patreon.com/JohnBanister"
+identifier = "qmEFf9JK8z"
+weight = 3333
+
+[[main]]
+name = "test"
+pre = "amazon"
+url = "https://wwww.google.com"
+identifier = "g3Iy9jI9qN"
+weight = 4444
+
+[[footer]]
+none = "none"
