@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on johnbanister.me</title>
-    <link>/tags/</link>
+    <link>https://dev.johnbanister.me/tags/</link>
     <description>Recent content in Tags on johnbanister.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 John Banister</copyright>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dev.johnbanister.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
