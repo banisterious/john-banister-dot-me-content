@@ -19,12 +19,12 @@ jobs:
           hugo-version: 'latest'
 
       - name: Build the Hugo site
-        run: hugo --minify --cleanDestinationDir
+        run: hugo --minify --cleanDestinationDir --config config/_default/config.production.toml
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./docs  # Change to docs/ if needed
+          publish_dir: ./docs  # Make sure Hugo outputs to docs/
           publish_branch: gh-pages
-          force_orphan: true  # Forces a fresh deploy
+          force_orphan: true  # Ensures a clean deploy
