@@ -19,7 +19,7 @@ jobs:
           hugo-version: 'latest'
 
       - name: Build the Hugo site
-        run: hugo --minify
+        run: hugo --minify --cleanDestinationDir
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
