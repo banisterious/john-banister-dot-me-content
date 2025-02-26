@@ -15,9 +15,9 @@ logo = "sparth-wr-logo.png"
 name = "John Banister"
 image = "author.jpeg"
 imageQuality = 96
-links = [
-  { github = "https://github.com/banisterious" },
-  { linkedin = "https://www.linkedin.com/in/john-banister-0534b6" },
-  { patreon = "https://www.patreon.com/JohnBanister" }
-]
+# links = [
+#   { github = "https://github.com/banisterious" },
+#   { linkedin = "https://www.linkedin.com/in/john-banister-0534b6" },
+#   { patreon = "https://www.patreon.com/JohnBanister" }
+# ]
 
