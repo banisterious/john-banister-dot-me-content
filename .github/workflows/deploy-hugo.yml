@@ -28,6 +28,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./docs  # Make sure Hugo outputs to docs/
+          publish_dir: .  # Deploys files at the root of gh-pages
           publish_branch: gh-pages
-          force_orphan: true  # This ensures old files are fully deleted before new ones are pushed
+          force_orphan: true  # Ensures old files are fully deleted before new ones are pushed
