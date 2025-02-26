@@ -1,0 +1,8 @@
+@font-face {
+    font-family: font-article-body;
+    src: url('/fonts/AlegreyaSans-Regular.ttf');
+}
+
+.article-content p {
+    font-family: font-article-body;
+}
