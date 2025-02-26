@@ -6,7 +6,6 @@ theme = "blowfish"
 baseURL = "https://dev.johnbanister.me/"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
-disableLanguages = ["fr", "es", "de", "zh", "it", "ru"]  # Disable all extra languages
 publishDir = "docs"
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
@@ -83,5 +82,5 @@ languageName = "English"
 weight = 1
 languageCode = "en-us"
 
-[languages.production]
+[languages.production] # Something is treating this as a language, so we must override it
 disabled = true
