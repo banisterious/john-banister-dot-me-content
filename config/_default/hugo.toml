@@ -80,4 +80,4 @@ weight = 1
 languageCode = "en-us"
 
 [languages.production]
-disabled = true
+disabled = true  # This prevents Hugo from treating "production" as a language.
