@@ -6,5 +6,15 @@
     <loc>https://dev.johnbanister.me/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="http://localhost:1313/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="production"
+      href="https://dev.johnbanister.me/"
+    />
   </url>
 </urlset>
