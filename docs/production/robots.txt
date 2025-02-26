@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://dev.johnbanister.me/sitemap.xml
