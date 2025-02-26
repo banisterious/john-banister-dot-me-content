@@ -13,11 +13,11 @@ url = "https://github.com/banisterious"
 identifier = "sY5pObj6g0"
 weight = 2222
 
-[[main]]
-pre = "patreon"
-url = "https://patreon.com/JohnBanister"
-identifier = "qmEFf9JK8z"
-weight = 3333
+# [[main]]
+# pre = "patreon"
+# url = "https://patreon.com/JohnBanister"
+# identifier = "qmEFf9JK8z"
+# weight = 3333
 
 [[footer]]
 none = "none"
