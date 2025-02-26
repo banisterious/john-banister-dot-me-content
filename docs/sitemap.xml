@@ -13,16 +13,6 @@
     <lastmod>2025-01-27T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="production"
-      href="https://dev.johnbanister.me/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="http://localhost:1313/"
-    />
   </url>
   <url>
     <loc>http://localhost:1313/listen/the-world-is-waiting/</loc>

@@ -6,6 +6,7 @@ theme = "blowfish"
 baseURL = "https://dev.johnbanister.me/"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
+disableLanguages = ["fr", "es", "de", "zh", "it", "ru"]  # Disable all extra languages
 publishDir = "docs"
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
@@ -39,6 +40,10 @@ enableEmoji = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"] # added to troubleshoot
+  page = ["HTML"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML"]
 
 [related]
   threshold = 0
@@ -69,3 +74,14 @@ enableEmoji = true
       name = 'fragmentrefs'
       type = 'fragments'
       weight = 10
+
+# Temporarily force Hugo to use only one language
+[languages]
+[languages.en]
+contentDir = "content"
+languageName = "English"
+weight = 1
+languageCode = "en-us"
+
+[languages.production]
+disabled = true
