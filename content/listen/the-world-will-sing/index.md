@@ -4,6 +4,8 @@ date: 2024-12-02
 draft: false
 list: local
 description: "a description"
+cascade:
+  showReadingTime: false
 tags: ["listen"]
 ---
 
