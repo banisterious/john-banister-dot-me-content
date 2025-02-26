@@ -16,5 +16,5 @@ h2 {
 }
 h1 {
     font-size: 200%;
-    font-weight: 400;
+    font-weight: 400 !important;
 }
