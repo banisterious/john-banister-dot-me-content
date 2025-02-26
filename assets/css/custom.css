@@ -12,7 +12,7 @@
     font-family: font-article-body;
 }
 
-.article h1 {
+.article h1, .article h2 {
     font-family: font-article-heading;
 }
 
