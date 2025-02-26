@@ -3,17 +3,28 @@
     src: url('/fonts/AlegreyaSans-Regular.ttf');
 }
 
+@font-face {
+    font-family: font-article-heading;
+    src: url('/fonts/AlegreyaSans-Regular.ttf');
+}
+
 .article-content p {
     font-family: font-article-body;
+}
+
+.article h1 {
+    font-family: font-article-heading;
 }
 
 body {
     font-size: 16px;
 }
+
 h2 {
     font-size: 150%;
     font-weight:700;
 }
+
 h1 {
     font-size: 200%;
     font-weight: 400 !important;
