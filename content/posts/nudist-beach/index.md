@@ -9,6 +9,8 @@ cascade:
 tags: ["posts"]
 ---
 
+<p>Pulled from a 1990s videotape collection, audio submitted to the KFJC Audio Production team as a legal ID.</p>
+
 <div style="position: relative; padding-top: 56.25%;">
   <iframe
     src="https://customer-6o30wrj8o66kos9k.cloudflarestream.com/3b21e45e8acbbbef34c153d43602f9f9/iframe?poster=https%3A%2F%2Fcustomer-6o30wrj8o66kos9k.cloudflarestream.com%2F3b21e45e8acbbbef34c153d43602f9f9%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"

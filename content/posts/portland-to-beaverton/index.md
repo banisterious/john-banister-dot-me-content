@@ -6,7 +6,7 @@ list: local
 description: "a description"
 cascade:
   showReadingTime: false
-tags: ["listen"]
+tags: ["posts"]
 ---
 
 <h2>MAX Light Rail Journey (October 20, 2023)</h2>

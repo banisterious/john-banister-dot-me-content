@@ -6,7 +6,7 @@ list: local
 description: "a description"
 cascade:
   showReadingTime: false
-tags: ["listen"]
+tags: ["posts"]
 ---
 
 <h2>Portland Bound Coastal Starlight Train</h2>

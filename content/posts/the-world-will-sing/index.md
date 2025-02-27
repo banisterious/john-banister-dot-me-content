@@ -6,7 +6,7 @@ list: local
 description: "a description"
 cascade:
   showReadingTime: false
-tags: ["listen"]
+tags: ["posts"]
 ---
 
 <p><a href="https://frameworkradio.net/2024/02/877-2024-02-18/" title="Framework Radio"><img class="post__image" src="https://imagedelivery.net/W3vkZ88MvMerAgdbS1TPPQ/49938774-ca9d-4ad4-c7d2-b9aa606d7800/public" alt="" width="1366" height="725"></a></p>

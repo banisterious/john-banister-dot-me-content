@@ -6,7 +6,7 @@ list: local
 description: "a description"
 cascade:
   showReadingTime: false
-tags: ["listen"]
+tags: ["posts"]
 ---
 
 <p><img class="post__image post__image--wide" src="https://imagedelivery.net/W3vkZ88MvMerAgdbS1TPPQ/830c4c80-e424-4794-4868-70bf69943c00/public" alt="" width="1207" height="768"></p>
