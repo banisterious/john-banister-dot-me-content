@@ -16,7 +16,7 @@
       
       <guid>http://localhost:1313/listen/the-world-is-waiting/</guid>
       <description></description>
-      
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/listen/the-world-is-waiting/featured-waiting.png" />
     </item>
     
     <item>
@@ -26,7 +26,27 @@
       
       <guid>http://localhost:1313/listen/the-world-will-sing/</guid>
       <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/listen/the-world-will-sing/featured-sing.png" />
+    </item>
+    
+    <item>
+      <title>Oakland to Portland</title>
+      <link>http://localhost:1313/listen/oakland-to-portland/</link>
+      <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
       
+      <guid>http://localhost:1313/listen/oakland-to-portland/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/listen/oakland-to-portland/featured-oakland-to-portland.png" />
+    </item>
+    
+    <item>
+      <title>Portland to Beaverton</title>
+      <link>http://localhost:1313/listen/portland-to-beaverton/</link>
+      <pubDate>Fri, 20 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/listen/portland-to-beaverton/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/listen/portland-to-beaverton/featured-portland-beaverton.png" />
     </item>
     
   </channel>
