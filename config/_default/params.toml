@@ -26,7 +26,7 @@ showRecentItems = 3
 showMoreLink = true
 showMoreLinkDest = "/listen/"
 cardView = true
-cardViewScreenWidth = true
+cardViewScreenWidth = false
 layoutBackgroundBlur = false
 homepageImage = "home.jpg"
 
