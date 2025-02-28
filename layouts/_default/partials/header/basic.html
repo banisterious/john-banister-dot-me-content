@@ -38,9 +38,13 @@
             {{ end }}
             {{ end }}
 
-            <!-- ✅ Patreon Login/Logout Handling -->
-            <a id="patreon-login" href="/patreon-auth" class="text-base text-primary-600 hover:text-primary-800">Login with Patreon</a>
-            <a id="exclusive-content" href="/exclusive-content" class="text-base text-primary-600 hover:text-primary-800" style="display: none;">Exclusive Content</a>
+            <!-- ✅ Ensure Hugo Always Renders These Links -->
+            <a id="patreon-login" href="/patreon-auth" class="text-base text-primary-600 hover:text-primary-800">
+                Login with Patreon
+            </a>
+            <a id="exclusive-content" href="/exclusive-content" class="text-base text-primary-600 hover:text-primary-800" style="display: none;">
+                Exclusive Content
+            </a>
 
             {{ partial "translations.html" . }}
 
