@@ -3,12 +3,12 @@
 
 <article>
 
-  <!-- ✅ Patreon Authentication Check -->
+  <!-- ✅ Patreon Authentication Check (Supporter) -->
   <script>
       document.addEventListener("DOMContentLoaded", function() {
           const token = localStorage.getItem("patreon_access");
 
-          // If user is not logged in via Patreon, redirect them to Patreon login
+          // If user is not logged in via Patreon and a member of the Supporter tier, redirect them to Patreon login
           if (!token) {
               window.location.href = "/patreon-auth";
           } else {
