@@ -3,16 +3,18 @@
 
 <article>
 
-  <!-- ✅ Patreon Authentication Check -->
+  <!-- ✅ Patreon Authentication Check (Client-Side) -->
   <script>
       document.addEventListener("DOMContentLoaded", function() {
           const token = localStorage.getItem("patreon_access");
 
-          // Redirect users to Patreon login if they don't have an access token
           if (!token) {
               window.location.href = "/patreon-auth";
           } else {
-              document.getElementById("exclusive-content-section").style.display = "block";
+              const contentSection = document.getElementById("exclusive-content-section");
+              if (contentSection) {
+                  contentSection.style.display = "block";
+              }
           }
       });
   </script>
@@ -37,30 +39,39 @@
     </div>
   </header>
 
-  <!-- ✅ Hide Content Until Patreon Login -->
-  <section id="exclusive-content-section" class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row" style="display: none;">
-    
-    <div class="min-w-0 min-h-0 max-w-fit">
-        
-      {{ partial "series/series.html" . }}
+  <!-- ✅ Server-Side Content Protection -->
+  {{ if eq .Params.patreon_required true }}
+    <noscript>
+      <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+        <div class="min-w-0 min-h-0 max-w-fit text-center">
+          <h2>🔒 Access Denied</h2>
+          <p>This content is for Patreon supporters only.</p>
+          <a href="/patreon-auth" class="px-4 py-2 bg-primary-500 text-white rounded">Login with Patreon</a>
+        </div>
+      </section>
+    </noscript>
 
-      <div class="article-content max-w-prose mb-20">
-        {{ .Content }}
-      </div>
-    </div>
+    <section id="exclusive-content-section" class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row" style="display: none;">
+      <div class="min-w-0 min-h-0 max-w-fit">
+        {{ partial "series/series.html" . }}
 
-  </section>
-
-  <!-- ✅ Show "Access Denied" Message If JavaScript Fails -->
-  <noscript>
-    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-      <div class="min-w-0 min-h-0 max-w-fit text-center">
-        <h2>🔒 Access Denied</h2>
-        <p>You must be a Patreon supporter to view this content.</p>
-        <a href="/patreon-auth" class="px-4 py-2 bg-primary-500 text-white rounded">Login with Patreon</a>
+        <div class="article-content max-w-prose mb-20">
+          {{ .Content }}
+        </div>
       </div>
     </section>
-  </noscript>
+  {{ else }}
+    <!-- Normal content rendering for public pages -->
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      <div class="min-w-0 min-h-0 max-w-fit">
+        {{ partial "series/series.html" . }}
+
+        <div class="article-content max-w-prose mb-20">
+          {{ .Content }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
 
   <footer class="pt-8 max-w-prose print:hidden">
     {{ partial "article-pagination.html" . }}
