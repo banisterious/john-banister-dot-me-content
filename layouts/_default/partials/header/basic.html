@@ -157,13 +157,17 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const isLoggedIn = document.cookie.includes("patreon_access=1");
+        const loginLink = document.getElementById("patreon-login");
+        const exclusiveLink = document.getElementById("exclusive-content");
 
-        if (isLoggedIn) {
-            document.getElementById("patreon-login").style.display = "none";
-            document.getElementById("exclusive-content").style.display = "inline";
-        } else {
-            document.getElementById("patreon-login").style.display = "inline";
-            document.getElementById("exclusive-content").style.display = "none";
+        if (loginLink && exclusiveLink) {
+            if (isLoggedIn) {
+                loginLink.style.display = "none";
+                exclusiveLink.style.display = "inline";
+            } else {
+                loginLink.style.display = "inline";
+                exclusiveLink.style.display = "none";
+            }
         }
     });
 </script>
