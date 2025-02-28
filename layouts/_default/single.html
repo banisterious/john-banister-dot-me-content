@@ -3,12 +3,12 @@
 
 <article>
 
-  <!-- ✅ Patreon Authentication Check (Supporter) -->
+  <!-- ✅ Patreon Authentication Check -->
   <script>
       document.addEventListener("DOMContentLoaded", function() {
           const token = localStorage.getItem("patreon_access");
 
-          // If user is not logged in via Patreon and a member of the Supporter tier, redirect them to Patreon login
+          // Redirect users to Patreon login if they don't have an access token
           if (!token) {
               window.location.href = "/patreon-auth";
           } else {
@@ -37,31 +37,30 @@
     </div>
   </header>
 
-  <!-- ✅ FULLY BLOCK CONTENT IF NOT LOGGED IN -->
-  {{ if getenv "PATREON_AUTHORIZED" }}
-  
-  <section id="exclusive-content-section" class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+  <!-- ✅ Hide Content Until Patreon Login -->
+  <section id="exclusive-content-section" class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row" style="display: none;">
+    
     <div class="min-w-0 min-h-0 max-w-fit">
+        
       {{ partial "series/series.html" . }}
 
       <div class="article-content max-w-prose mb-20">
         {{ .Content }}
       </div>
     </div>
+
   </section>
 
-  {{ else }}
-  
-  <!-- 🔒 Show this message if user is NOT logged in -->
-  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    <div class="min-w-0 min-h-0 max-w-fit text-center">
-      <h2>🔒 Access Denied</h2>
-      <p>You must be a Patreon Supporter to view this content.</p>
-      <a href="/patreon-auth" class="px-4 py-2 bg-primary-500 text-white rounded">Login with Patreon</a>
-    </div>
-  </section>
-
-  {{ end }}
+  <!-- ✅ Show "Access Denied" Message If JavaScript Fails -->
+  <noscript>
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      <div class="min-w-0 min-h-0 max-w-fit text-center">
+        <h2>🔒 Access Denied</h2>
+        <p>You must be a Patreon supporter to view this content.</p>
+        <a href="/patreon-auth" class="px-4 py-2 bg-primary-500 text-white rounded">Login with Patreon</a>
+      </div>
+    </section>
+  </noscript>
 
   <footer class="pt-8 max-w-prose print:hidden">
     {{ partial "article-pagination.html" . }}
