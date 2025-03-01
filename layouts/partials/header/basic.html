@@ -47,10 +47,11 @@
                 function logoutPatreon() {
                     console.log("🚪 Logging out...");
             
-                    // Fully delete the patreon_access cookie across all paths & domains
+                    // Fully delete the patreon_access cookie across all paths
                     document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; Secure; SameSite=Lax";
+                    document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/exclusive-content/; Secure; SameSite=Lax";
             
-                    // Force immediate logout UI update
+                    // Force immediate UI update
                     const loginButton = document.getElementById("patreon-login");
                     const logoutButton = document.getElementById("patreon-logout");
             
