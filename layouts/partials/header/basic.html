@@ -40,15 +40,15 @@
 
             <script>
                 function getCookie(name) {
-                    const value = `; ${document.cookie}`;
-                    const parts = value.split(`; ${name}=`);
-                    if (parts.length === 2) return parts.pop().split(';').shift();
-                    return null;
+                    let match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+                    return match ? match[2] : null;
                 }
             
                 document.addEventListener("DOMContentLoaded", function () {
-                    const isLoggedIn = getCookie("patreon_access") === "1"; // Ensure we check the actual value
-                    console.log("🔍 Patreon Login State (from cookies):", isLoggedIn);
+                    const patreonAccess = getCookie("patreon_access");
+                    const isLoggedIn = patreonAccess === "1"; // Ensure we're checking for value "1"
+            
+                    console.log("🔍 Patreon Login State (from cookies):", patreonAccess, "→ Logged in:", isLoggedIn);
             
                     const loginButton = document.getElementById("patreon-login");
                     const logoutButton = document.getElementById("patreon-logout");
@@ -73,7 +73,7 @@
                     document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                     window.location.reload();
                 }
-            </script>                    
+            </script>            
             
             <nav class="flex items-center gap-x-4">
                 <!-- 🔑 Login Button -->
