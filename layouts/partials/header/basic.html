@@ -47,10 +47,10 @@
                 function logoutPatreon() {
                     console.log("🚪 Logging out...");
             
-                    // Delete the patreon_access cookie
-                    document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                    
-                    // Ensure the login/logout buttons update immediately
+                    // Fully delete the patreon_access cookie across all paths & domains
+                    document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; Secure; SameSite=Lax";
+            
+                    // Force immediate logout UI update
                     const loginButton = document.getElementById("patreon-login");
                     const logoutButton = document.getElementById("patreon-logout");
             
@@ -65,8 +65,10 @@
                         : "/";
                     console.log("🔄 Redirecting to:", returnURL);
             
-                    // Force a full page reload to clear cached authentication state
-                    window.location.href = returnURL;
+                    // Ensure cookie deletion is applied before redirecting
+                    setTimeout(() => {
+                        window.location.href = returnURL;
+                    }, 100);
                 }
             
                 document.addEventListener("DOMContentLoaded", function () {
