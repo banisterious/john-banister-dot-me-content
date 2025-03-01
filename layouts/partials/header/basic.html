@@ -41,25 +41,31 @@
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
                     const isLoggedIn = document.cookie.includes("patreon_access=1");
+                    console.log("🔍 Patreon Login State: ", isLoggedIn);  // Debugging Output
                     const loginButton = document.getElementById("patreon-login");
                     const logoutButton = document.getElementById("patreon-logout");
             
                     if (loginButton && logoutButton) {
                         if (isLoggedIn) {
+                            console.log("✅ User is logged in → Showing logout button, hiding login button");
                             loginButton.style.display = "none";
                             logoutButton.style.display = "inline-flex";
                         } else {
+                            console.log("❌ User is NOT logged in → Showing login button, hiding logout button");
                             loginButton.style.display = "inline-flex";
                             logoutButton.style.display = "none";
                         }
+                    } else {
+                        console.log("⚠️ One or both buttons not found in the DOM");
                     }
                 });
             
                 function logoutPatreon() {
+                    console.log("🚪 Logging out...");
                     document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                     window.location.reload();
                 }
-            </script>
+            </script>            
             
             <nav class="flex items-center gap-x-4">
                 <!-- 🔑 Login Button -->
