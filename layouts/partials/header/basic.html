@@ -44,6 +44,40 @@
                     return match ? decodeURIComponent(match[2]) : null;
                 }
             
+                function logoutPatreon() {
+                    console.log("🚪 Logging out...");
+            
+                    // Fully delete cookies across all paths
+                    document.cookie = "patreon_access=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; Secure; SameSite=Lax";
+                    document.cookie = "patreon_name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; Secure; SameSite=Lax";
+            
+                    // Ensure immediate UI update
+                    const loginButton = document.getElementById("patreon-login");
+                    const logoutButton = document.getElementById("patreon-logout");
+            
+                    if (loginButton && logoutButton) {
+                        loginButton.style.display = "inline-flex";
+                        logoutButton.style.display = "none";
+                    }
+            
+                    // Show a temporary "You’ve been logged out" message
+                    const logoutMessage = document.createElement("div");
+                    logoutMessage.innerHTML = "✅ You’ve been logged out.";
+                    logoutMessage.style.cssText = "position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #ffcc00; color: black; padding: 10px 20px; border-radius: 5px; font-size: 16px; font-weight: bold; z-index: 1000;";
+                    document.body.appendChild(logoutMessage);
+            
+                    // Redirect the user back to the previous page or home
+                    const returnURL = document.referrer && document.referrer.startsWith(window.location.origin)
+                        ? document.referrer
+                        : "/";
+                    console.log("🔄 Redirecting to:", returnURL);
+            
+                    // Delay redirect to allow UI changes to appear
+                    setTimeout(() => {
+                        window.location.href = returnURL;
+                    }, 2000);
+                }
+            
                 document.addEventListener("DOMContentLoaded", function () {
                     const isLoggedIn = getCookie("patreon_access") === "1";
                     const patronName = getCookie("patreon_name") || "Patron";
@@ -51,30 +85,23 @@
             
                     const loginButton = document.getElementById("patreon-login");
                     const logoutButton = document.getElementById("patreon-logout");
-                    const welcomeMessage = document.createElement("div");
             
-                    if (isLoggedIn) {
-                        console.log("✅ User is logged in → Showing logout button, hiding login button");
-                        loginButton.style.display = "none";
-                        logoutButton.style.display = "inline-flex";
-            
-                        // Display "Welcome back" message
-                        welcomeMessage.innerHTML = `👋 Welcome back, ${patronName}!`;
-                        welcomeMessage.style.cssText = "position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #4caf50; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px; font-weight: bold; z-index: 1000;";
-                        document.body.appendChild(welcomeMessage);
-            
-                        // Remove message after 3 seconds
-                        setTimeout(() => {
-                            welcomeMessage.remove();
-                        }, 3000);
+                    if (loginButton && logoutButton) {
+                        if (isLoggedIn) {
+                            console.log("✅ User is logged in → Showing logout button, hiding login button");
+                            loginButton.style.display = "none";
+                            logoutButton.style.display = "inline-flex";
+                        } else {
+                            console.log("❌ User is NOT logged in → Showing login button, hiding logout button");
+                            loginButton.style.display = "inline-flex";
+                            logoutButton.style.display = "none";
+                        }
                     } else {
-                        console.log("❌ User is NOT logged in → Showing login button, hiding logout button");
-                        loginButton.style.display = "inline-flex";
-                        logoutButton.style.display = "none";
+                        console.log("⚠️ One or both buttons not found in the DOM");
                     }
                 });
-            </script>
-            
+            </script>            
+
             <nav class="flex items-center gap-x-4">
                 <!-- 🔑 Login Button -->
                 <a id="patreon-login" href="/patreon-auth" aria-label="Login with Patreon"
