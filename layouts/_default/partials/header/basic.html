@@ -38,14 +38,38 @@
             {{ end }}
             {{ end }}
 
-            <!-- ✅ Ensure Hugo Always Renders These Links -->
-            <a id="patreon-login" href="/patreon-auth" class="text-base text-primary-600 hover:text-primary-800">
-                Login with Patreon
-            </a>
-            <a id="exclusive-content" href="/exclusive-content" class="text-base text-primary-600 hover:text-primary-800" style="display: none;">
-                Exclusive Content
-            </a>
-
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const isLoggedIn = document.cookie.includes("patreon_access=1");
+                    const loginButton = document.getElementById("patreon-login");
+                    const logoutButton = document.getElementById("patreon-logout");
+            
+                    if (loginButton && logoutButton) {
+                        if (isLoggedIn) {
+                            loginButton.style.display = "none";
+                            logoutButton.style.display = "inline-flex";
+                        } else {
+                            loginButton.style.display = "inline-flex";
+                            logoutButton.style.display = "none";
+                        }
+                    }
+                });
+            
+                function logoutPatreon() {
+                    document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    window.location.reload();
+                }
+            </script>
+            
+            <nav>
+                <a id="patreon-login" href="/patreon-auth" class="flex items-center text-base text-primary-600 hover:text-primary-800">
+                    <img src="{{ "icons/log-in.svg" | relURL }}" alt="Login" class="w-5 h-5 mr-2"> Login with Patreon
+                </a>
+                <button id="patreon-logout" onclick="logoutPatreon()" class="flex items-center text-base text-primary-600 hover:text-primary-800 hidden">
+                    <img src="{{ "icons/log-out.svg" | relURL }}" alt="Logout" class="w-5 h-5 mr-2"> Logout
+                </button>
+            </nav>
+            
             {{ partial "translations.html" . }}
 
             {{ if .Site.Params.enableSearch | default false }}
