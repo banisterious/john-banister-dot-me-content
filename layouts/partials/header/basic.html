@@ -61,14 +61,28 @@
                 }
             </script>
             
-            <nav>
-                <a id="patreon-login" href="/patreon-auth" class="flex items-center text-base text-primary-600 hover:text-primary-800">
-                    <img src="{{ "icons/lucide-log-in.svg" | relURL }}" alt="Login" class="w-5 h-5 mr-2"> Login with Patreon
+            <nav class="flex items-center gap-x-4">
+                <!-- 🔑 Login Button -->
+                <a id="patreon-login" href="/patreon-auth" aria-label="Login with Patreon"
+                   class="flex items-center text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <span class="relative block icon">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                    </span>
                 </a>
-                <button id="patreon-logout" onclick="logoutPatreon()" class="flex items-center text-base text-primary-600 hover:text-primary-800 hidden">
-                    <img src="{{ "icons/lucide-log-out.svg" | relURL }}" alt="Logout" class="w-5 h-5 mr-2"> Logout
+            
+                <!-- 🚪 Logout Button -->
+                <button id="patreon-logout" onclick="logoutPatreon()" aria-label="Logout"
+                        class="flex items-center text-base hover:text-primary-600 dark:hover:text-primary-400 hidden">
+                    <span class="relative block icon">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M10 9v-4h4v4h4v-6h-12v6h4zm-6 6h12v6h-4v-4h-4v4h-4v-6z"/>
+                        </svg>
+                    </span>
                 </button>
             </nav>
+            
             
             {{ partial "translations.html" . }}
 
