@@ -39,41 +39,21 @@
             {{ end }}
 
             <script>
-                function getCookie(name) {
-                    let match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
-                    return match ? match[2] : null;
-                }
-            
-                document.addEventListener("DOMContentLoaded", function () {
-                    const patreonAccess = getCookie("patreon_access");
-                    const isLoggedIn = patreonAccess === "1"; // Ensure we're checking for value "1"
-            
-                    console.log("🔍 Patreon Login State (from cookies):", patreonAccess, "→ Logged in:", isLoggedIn);
-            
-                    const loginButton = document.getElementById("patreon-login");
-                    const logoutButton = document.getElementById("patreon-logout");
-            
-                    if (loginButton && logoutButton) {
-                        if (isLoggedIn) {
-                            console.log("✅ User is logged in → Showing logout button, hiding login button");
-                            loginButton.style.display = "none";
-                            logoutButton.style.display = "inline-flex";
-                        } else {
-                            console.log("❌ User is NOT logged in → Showing login button, hiding logout button");
-                            loginButton.style.display = "inline-flex";
-                            logoutButton.style.display = "none";
-                        }
-                    } else {
-                        console.log("⚠️ One or both buttons not found in the DOM");
-                    }
-                });
-            
                 function logoutPatreon() {
                     console.log("🚪 Logging out...");
+            
+                    // Delete the patreon_access cookie
                     document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                    window.location.reload();
+                    
+                    // Redirect the user back to the page they were on
+                    const returnURL = document.referrer && document.referrer.startsWith(window.location.origin)
+                        ? document.referrer
+                        : "/"; // Default to homepage if referrer is unavailable
+            
+                    console.log("🔄 Redirecting to:", returnURL);
+                    window.location.href = returnURL;
                 }
-            </script>            
+            </script>
             
             <nav class="flex items-center gap-x-4">
                 <!-- 🔑 Login Button -->
