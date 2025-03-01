@@ -78,7 +78,8 @@
             <nav class="flex items-center gap-x-4">
                 <!-- 🔑 Login Button -->
                 <a id="patreon-login" href="/patreon-auth" aria-label="Login with Patreon"
-                   class="flex items-center text-base hover:text-primary-600 dark:hover:text-primary-400">
+                   class="flex items-center text-base hover:text-primary-600 dark:hover:text-primary-400"
+                   title="Log in with Patreon to access exclusive content">
                     <span class="relative block icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
@@ -92,7 +93,8 @@
             
                 <!-- 🚪 Logout Button -->
                 <button id="patreon-logout" onclick="logoutPatreon()" aria-label="Logout"
-                        class="flex items-center text-base hover:text-primary-600 dark:hover:text-primary-400 hidden">
+                        class="flex items-center text-base hover:text-primary-600 dark:hover:text-primary-400 hidden"
+                        title="Log out of Patreon">
                     <span class="relative block icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
@@ -103,8 +105,7 @@
                         </svg>
                     </span>
                 </button>
-            </nav>
-            
+            </nav>           
             
             {{ partial "translations.html" . }}
 
