@@ -182,7 +182,7 @@
             
             
             
-  <a href="/listen/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
     <span >
         
@@ -236,6 +236,38 @@
             
             
 
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const isLoggedIn = document.cookie.includes("patreon_access=1");
+                    const loginButton = document.getElementById("patreon-login");
+                    const logoutButton = document.getElementById("patreon-logout");
+            
+                    if (loginButton && logoutButton) {
+                        if (isLoggedIn) {
+                            loginButton.style.display = "none";
+                            logoutButton.style.display = "inline-flex";
+                        } else {
+                            loginButton.style.display = "inline-flex";
+                            logoutButton.style.display = "none";
+                        }
+                    }
+                });
+            
+                function logoutPatreon() {
+                    document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    window.location.reload();
+                }
+            </script>
+            
+            <nav>
+                <a id="patreon-login" href="/patreon-auth" class="flex items-center text-base text-primary-600 hover:text-primary-800">
+                    <img src="/icons/lucide-log-in.svg" alt="Login" class="w-5 h-5 mr-2"> Login with Patreon
+                </a>
+                <button id="patreon-logout" onclick="logoutPatreon()" class="flex items-center text-base text-primary-600 hover:text-primary-800 hidden">
+                    <img src="/icons/lucide-log-out.svg" alt="Logout" class="w-5 h-5 mr-2"> Logout
+                </button>
+            </nav>
+            
             
 
 
@@ -368,7 +400,7 @@
 
                     
   <li class="mt-1">
-    <a href="/listen/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <div >
             
@@ -518,11 +550,11 @@
   
   
 
-  <a href="/listen/the-world-is-waiting/" class="min-w-full">
+  <a href="/posts/nudist-beach/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card nozoom" style="background-image:url(/listen/the-world-is-waiting/featured-waiting_hu2452686892431933921.png);"></div>
+        <div class="w-full thumbnail_card nozoom" style="background-image:url(/posts/nudist-beach/featured-nudist-beach_hu15204492211466767059.png);"></div>
         
       
 
@@ -530,7 +562,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/listen/the-world-is-waiting/">The World is Waiting for the Sunrise</div>
+          href="/posts/nudist-beach/">Going to the Nudist Beach (Oh God!)</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -552,8 +584,6 @@
 
 
 
-  
-
 
 
 
@@ -571,7 +601,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-01-27T00:00:00&#43;00:00">January 27, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>560 words</span>
+  <time datetime="2025-02-26T00:00:00&#43;00:00">February 26, 2025</time>
   
 
   
@@ -598,11 +628,11 @@
   
   
 
-  <a href="/listen/the-world-will-sing/" class="min-w-full">
+  <a href="/posts/the-world-is-waiting/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card nozoom" style="background-image:url(/listen/the-world-will-sing/featured-sing_hu17806008638187497510.png);"></div>
+        <div class="w-full thumbnail_card nozoom" style="background-image:url(/posts/the-world-is-waiting/featured-waiting_hu2452686892431933921.png);"></div>
         
       
 
@@ -610,7 +640,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/listen/the-world-will-sing/">Till the World Will Sing Again</div>
+          href="/posts/the-world-is-waiting/">The World is Waiting for the Sunrise</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -632,8 +662,6 @@
 
 
 
-  
-
 
 
 
@@ -651,7 +679,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-12-02T00:00:00&#43;00:00">December 2, 2024</time><span class="px-2 text-primary-500">&middot;</span><span>296 words</span>
+  <time datetime="2025-01-27T00:00:00&#43;00:00">January 27, 2025</time>
   
 
   
@@ -678,11 +706,11 @@
   
   
 
-  <a href="/listen/oakland-to-portland/" class="min-w-full">
+  <a href="/posts/the-world-will-sing/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card nozoom" style="background-image:url(/listen/oakland-to-portland/featured-oakland-to-portland_hu16181104280234472901.png);"></div>
+        <div class="w-full thumbnail_card nozoom" style="background-image:url(/posts/the-world-will-sing/featured-sing_hu17806008638187497510.png);"></div>
         
       
 
@@ -690,7 +718,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/listen/oakland-to-portland/">Oakland to Portland</div>
+          href="/posts/the-world-will-sing/">Till the World Will Sing Again</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -712,88 +740,6 @@
 
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2024-09-19T00:00:00&#43;00:00">September 19, 2024</time><span class="px-2 text-primary-500">&middot;</span><span>36 words</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-  
-
-  <a href="/listen/portland-to-beaverton/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card nozoom" style="background-image:url(/listen/portland-to-beaverton/featured-portland-beaverton_hu6251003120850778441.png);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/listen/portland-to-beaverton/">Portland to Beaverton</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
 
 
 
@@ -811,7 +757,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-10-20T00:00:00&#43;00:00">October 20, 2023</time><span class="px-2 text-primary-500">&middot;</span><span>45 words</span>
+  <time datetime="2024-12-02T00:00:00&#43;00:00">December 2, 2024</time>
   
 
   
@@ -839,6 +785,18 @@
 </section>
 
 
+
+
+
+
+<div class="mt-10 flex justify-center">
+  <a href="/posts/">
+    <button
+      class="bg-transparent hover:text-primary-500 prose dark:prose-invert font-semibold hover:text-white py-2 px-4 border border-primary-500 hover:border-transparent rounded">
+      Show More
+    </button>
+  </a>
+</div>
 
 
 
