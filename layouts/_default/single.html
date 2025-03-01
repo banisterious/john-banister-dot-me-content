@@ -3,7 +3,7 @@
 
 <article>
 
-  <!-- ✅ Patreon Authentication Check (Client-Side) -->
+  <!-- ✅ Patreon Authentication Check (Client-Side)
   <script>
       document.addEventListener("DOMContentLoaded", function() {
           const token = localStorage.getItem("patreon_access");
@@ -17,7 +17,7 @@
               }
           }
       });
-  </script>
+  </script> -->
 
   {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
   {{ $heroStyle := .Params.heroStyle }}
