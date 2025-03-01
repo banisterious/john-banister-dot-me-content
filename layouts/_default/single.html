@@ -3,21 +3,18 @@
 
 <article>
 
-  <!-- ✅ Patreon Authentication Check (Client-Side)
+  <!-- ✅ Patreon Authentication Check (Client-Side) -->
   <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          const token = localStorage.getItem("patreon_access");
+    document.addEventListener("DOMContentLoaded", function () {
+        const isExclusivePage = window.location.pathname.startsWith("/exclusive-content");
+        const isLoggedIn = document.cookie.includes("patreon_access=1");
 
-          if (!token) {
-              window.location.href = "/patreon-auth";
-          } else {
-              const contentSection = document.getElementById("exclusive-content-section");
-              if (contentSection) {
-                  contentSection.style.display = "block";
-              }
-          }
-      });
-  </script> -->
+        if (isExclusivePage && !isLoggedIn) {
+            console.log("🔒 Redirecting unauthorized user to Patreon login...");
+            window.location.href = "/patreon-auth";
+        }
+    });
+  </script>
 
   {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
   {{ $heroStyle := .Params.heroStyle }}
