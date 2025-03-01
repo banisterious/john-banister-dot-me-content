@@ -49,31 +49,26 @@
             
                     // Fully delete the patreon_access cookie across all paths
                     document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; Secure; SameSite=Lax";
-                    document.cookie = "patreon_access=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/exclusive-content/; Secure; SameSite=Lax";
             
-                    // Force immediate UI update
-                    const loginButton = document.getElementById("patreon-login");
-                    const logoutButton = document.getElementById("patreon-logout");
+                    // Show a temporary "You’ve been logged out" message
+                    const logoutMessage = document.createElement("div");
+                    logoutMessage.innerHTML = "✅ You’ve been logged out.";
+                    logoutMessage.style.cssText = "position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #ffcc00; color: black; padding: 10px 20px; border-radius: 5px; font-size: 16px; font-weight: bold; z-index: 1000;";
+                    document.body.appendChild(logoutMessage);
             
-                    if (loginButton && logoutButton) {
-                        loginButton.style.display = "inline-flex";
-                        logoutButton.style.display = "none";
-                    }
-            
-                    // Redirect the user back to the page they were on, or home if no referrer
+                    // Redirect the user back to the previous page or home
                     const returnURL = document.referrer && document.referrer.startsWith(window.location.origin)
                         ? document.referrer
                         : "/";
                     console.log("🔄 Redirecting to:", returnURL);
             
-                    // Ensure cookie deletion is applied before redirecting
                     setTimeout(() => {
                         window.location.href = returnURL;
-                    }, 100);
+                    }, 2000); // Show message for 2 seconds before redirecting
                 }
             
                 document.addEventListener("DOMContentLoaded", function () {
-                    const isLoggedIn = getCookie("patreon_access") === "1"; // Ensure we're checking for value "1"
+                    const isLoggedIn = getCookie("patreon_access") === "1";
                     console.log("🔍 Patreon Login State (from cookies):", isLoggedIn);
             
                     const loginButton = document.getElementById("patreon-login");
