@@ -1,0 +1,36 @@
+/*
+Sparth Woodring #2
+Colors: #007ec5, #764098, #263d4b
+*/
+:root { --color-neutral: 255, 255, 255;
+--color-neutral-50:     255,255,255;
+--color-neutral-100:    248,252,255;
+--color-neutral-200:    171,225,255;
+--color-neutral-300:    95,197,255;
+--color-neutral-400:    19,170,255;
+--color-neutral-500:    0,126,197;
+--color-neutral-600:    0,100,156;
+--color-neutral-700:    0,74,115;
+--color-neutral-800:    0,48,75;
+--color-neutral-900:    0,22,34;
+--color-primary-50:     255,255,255;
+--color-primary-100:    255,255,255;
+--color-primary-200:    226,210,236;
+--color-primary-300:    191,156,213;
+--color-primary-400:    156,102,191;
+--color-primary-500:    118,64,152;
+--color-primary-600:    96,52,123;
+--color-primary-700:    73,40,95;
+--color-primary-800:    51,28,66;
+--color-primary-900:    29,16,37;
+--color-secondary-50:     245,248,250;
+--color-secondary-100:    195,213,224;
+--color-secondary-200:    144,178,199;
+--color-secondary-300:    93,143,173;
+--color-secondary-400:    64,102,126;
+--color-secondary-500:    38,61,75;
+--color-secondary-600:    24,39,48;
+--color-secondary-700:    11,17,21;
+--color-secondary-800:    0,0,0;
+--color-secondary-900:    0,0,0;
+}
