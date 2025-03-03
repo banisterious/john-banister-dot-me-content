@@ -1,4 +1,4 @@
-{{ $content := .Get 0 | markdownify }}
+{{ $content := .Page.RenderString . }}
 {{ $calloutRegex := `^\[!(\w+)(?:\|([^]]+))?\]` }}
 
 {{ $match := findRE $calloutRegex $content 1 }}
@@ -24,5 +24,5 @@
       </div>
   </div>
 {{ else }}
-  <blockquote>{{ .Get 0 | markdownify }}</blockquote>
+  <blockquote>{{ .Page.RenderString . }}</blockquote>
 {{ end }}
