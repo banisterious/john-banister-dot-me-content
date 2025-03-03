@@ -1,5 +1,5 @@
-{{ $content := .Text }}
-{{ $calloutRegex := `^\[!(\w+)(?:\|([^\]]+))?\]\s*(.*)` }}
+{{ $content := trim .Text " \n" }}
+{{ $calloutRegex := `(?s)^\[!(\w+)(?:\|([^\]]+))?\]\s*(.*)` }}
 
 {{ $match := findRE $calloutRegex $content 1 }}
 {{ $type := "" }}
