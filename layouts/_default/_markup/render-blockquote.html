@@ -1,0 +1,18 @@
+{{ $content := .Inner | markdownify }}
+{{ $calloutRegex := `^\[!(\w+)(?:\|([^]]+))?\]` }}
+
+{{ if findRE $calloutRegex $content }}
+  <!-- Custom callout rendering -->
+  <div class="callout" data-callout="{{ $type }}" {{ if $metadata }}data-callout-metadata="{{ $metadata }}"{{ end }} data-callout-fold="">
+      <div class="callout-title">
+          <div class="callout-icon"></div>
+          <div class="callout-title-inner">{{ if $metadata }}{{ $metadata }}{{ else }}{{ $type | title }}{{ end }}</div>
+      </div>
+      <div class="callout-content">
+          {{ replaceRE $calloutRegex "" $content | safeHTML }}
+      </div>
+  </div>
+{{ else }}
+  <!-- Default Hugo blockquote rendering -->
+  <blockquote>{{ .Inner | markdownify }}</blockquote>
+{{ end }}
