@@ -1,10 +1,13 @@
 {{ $content := .Inner | markdownify }}
 {{ $calloutRegex := `^\[!(\w+)(?:\|([^]]+))?\]` }}
 
-{{ if findRE $calloutRegex $content }}
-  {{ $match := index (findRE $calloutRegex $content 1) 0 }}
-  {{ $type := lower (index (findRE `\w+` $match 1) 0) }}
-  {{ $metadata := "" }}
+{{ $match := findRE $calloutRegex $content 1 }}
+{{ $type := "" }}
+{{ $metadata := "" }}
+
+{{ if $match }}
+  {{ $match = index $match 0 }}
+  {{ $type = lower (index (findRE `\w+` $match 1) 0) }}
 
   {{ if findRE `\|` $match }}
     {{ $metadata = replaceRE `^\[!\w+\|` "" $match }}
