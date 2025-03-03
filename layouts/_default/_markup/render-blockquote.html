@@ -1,4 +1,4 @@
-{{ $content := .Content | markdownify }} 
+{{ $content := .String | markdownify }}
 {{ $calloutRegex := `^\[!(\w+)(?:\|([^]]+))?\]` }}
 
 {{ $match := findRE $calloutRegex $content 1 }}
@@ -20,9 +20,3 @@
           <div class="callout-title-inner">{{ if $metadata }}{{ $metadata }}{{ else }}{{ $type | title }}{{ end }}</div>
       </div>
       <div class="callout-content">
-          {{ replaceRE $calloutRegex "" $content | safeHTML }}
-      </div>
-  </div>
-{{ else }}
-  <blockquote>{{ .Content | markdownify }}</blockquote>
-{{ end }}
