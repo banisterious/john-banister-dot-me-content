@@ -1,17 +1,17 @@
 [[main]]
 none = "none"
 
-[[main]]
-pre = "lucide-audio-lines"
-pageRef = "posts"
-identifier = "xT7holZvME"
-weight = 1115
+# [[main]]
+# pre = "lucide-audio-lines"
+# pageRef = "posts"
+# identifier = "xT7holZvME"
+# weight = 1115
 
-[[main]]
-pre = "lucide-github"
-url = "https://github.com/banisterious"
-identifier = "sY5pObj6g0"
-weight = 2222
+# [[main]]
+# pre = "lucide-github"
+# url = "https://github.com/banisterious"
+# identifier = "sY5pObj6g0"
+# weight = 2222
 
 # [[main]]
 # pre = "patreon"
@@ -21,3 +21,9 @@ weight = 2222
 
 [[footer]]
 none = "none"
+
+[[footer]]
+pre = "lucide-github"
+url = "https://github.com/banisterious"
+identifier = "sY5pObj6g0"
+weight = 2222
