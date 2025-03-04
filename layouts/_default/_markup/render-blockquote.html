@@ -14,16 +14,16 @@
 
 {{ if $match }}
   {{ $match = index $match 0 }}
-  {{ $type = lower (index (findRE `^\[!(\w+)` $match 1) 0) }} <!-- ✅ Fixed: Correct parentheses placement -->
+  {{ $type = lower (index (findRE `^\[!(\w+)` $match 1) 0) ) }}
 
   {{ if findRE `\|` $match }}
     {{ $metadata = replaceRE `^\[!\w+\|` "" $match }}
     {{ $metadata = replaceRE `\].*$` "" $metadata }}
-    {{ $metadata = trim $metadata }}
+    {{ $metadata = trim $metadata " " }}  <!-- ✅ Fixed trim() syntax -->
   {{ end }}
 
-  {{ $title = trim (replaceRE $calloutRegex "$3" $content) }}
-  {{ $text = trim (replaceRE $calloutRegex "$4" $content) }}
+  {{ $title = trim (replaceRE $calloutRegex "$3" $content) " " }}  <!-- ✅ Fixed trim() syntax -->
+  {{ $text = trim (replaceRE $calloutRegex "$4" $content) " " }}  <!-- ✅ Fixed trim() syntax -->
 
   <div class="callout" data-callout="{{ $type }}" {{ if $metadata }}data-callout-metadata="{{ $metadata }}"{{ end }} data-callout-fold="">
       <div class="callout-title">
