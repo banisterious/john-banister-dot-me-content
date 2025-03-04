@@ -1,5 +1,5 @@
 ---
-title: "Exclusive Patreon Content"
+title: "Book Previews"
 date: 2025-02-28
 draft: false
 patreon_required: true
@@ -9,5 +9,5 @@ cascade:
 tags: ["patreon"]
 ---
 
-> [!NOTE|testing] Welcome
-> Welcome to your exclusive content! 🎉
+> [!NOTE|testing] Welcome!
+> Book preview content will appear here.
