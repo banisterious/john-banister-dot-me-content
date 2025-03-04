@@ -14,7 +14,7 @@
 
 {{ if $match }}
   {{ $match = index $match 0 }}
-  {{ $type = lower (index (findRE `^\[!(\w+)` $match 1) 0) ) }}
+  {{ $type = lower (index (findRE `^\[!(\w+)` $match 1) 0) }} <!-- ✅ Fixed: Correct parentheses placement -->
 
   {{ if findRE `\|` $match }}
     {{ $metadata = replaceRE `^\[!\w+\|` "" $match }}
@@ -22,8 +22,8 @@
     {{ $metadata = trim $metadata }}
   {{ end }}
 
-  {{ $title = replaceRE $calloutRegex "$3" $content | trim }}
-  {{ $text = replaceRE $calloutRegex "$4" $content | trim }}
+  {{ $title = trim (replaceRE $calloutRegex "$3" $content) }}
+  {{ $text = trim (replaceRE $calloutRegex "$4" $content) }}
 
   <div class="callout" data-callout="{{ $type }}" {{ if $metadata }}data-callout-metadata="{{ $metadata }}"{{ end }} data-callout-fold="">
       <div class="callout-title">
