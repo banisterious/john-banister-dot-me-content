@@ -1,6 +1,5 @@
-<!-- DEBUG START -->
-<p style="color: red; font-weight: bold;">DEBUG: "{{ . }}"</p>
-<!-- DEBUG END -->
+<!-- DEBUG: Show raw blockquote content -->
+<p style="color: red; font-weight: bold;">DEBUG: {{ printf "%#v" .Text }}</p>
 
 {{ $content := trim .Text " \n" }}
 
