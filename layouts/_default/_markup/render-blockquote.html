@@ -1,3 +1,7 @@
+<!-- DEBUG START -->
+<p style="color: red; font-weight: bold;">DEBUG: {{ .Text }}</p>
+<!-- DEBUG END -->
+
 {{ $content := trim .Text " \n" }}
 {{ $calloutRegex := `(?s)^\[!(\w+)(?:\|([^\]]+))?\]\s*(.*)` }}
 
