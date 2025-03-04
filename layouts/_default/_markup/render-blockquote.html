@@ -1,22 +1,17 @@
-<!-- DEBUG START -->
-<p style="color: red; font-weight: bold;">DEBUG: {{ .Text }}</p>
-<!-- DEBUG END -->
+<!-- DEBUG: Show raw blockquote content -->
+<p style="color: red; font-weight: bold;">DEBUG: {{ printf "%#v" .Text }}</p>
 
 {{ $content := trim .Text " \n" }}
-{{ $calloutRegex := `(?s)^\[!(\w+)(?:\|([^\]]+))?\]\s*(.*)` }}
 
-{{ $match := findRE $calloutRegex $content 1 }}
-{{ $type := "" }}
-{{ $metadata := "" }}
-{{ $text := "" }}
+{{ if hasPrefix $content "[!" }}
+  {{ $firstLine := index (split $content "\n") 0 }}
+  {{ $rest := after 1 (split $content "\n") | delimit "\n" }}
 
-{{ if $match }}
-  {{ $match = index $match 0 }}
-  {{ $type = lower (index (findRE `^\[!(\w+)` $match 1) 0) }}
-  {{ $text = replaceRE $calloutRegex "$3" $content }}
+  {{ $type := lower (index (findRE `^\[!(\w+)` $firstLine 1) 0) }}
+  {{ $metadata := "" }}
 
-  {{ if findRE `\|` $match }}
-    {{ $metadata = replaceRE `^\[!\w+\|` "" $match }}
+  {{ if findRE `\|` $firstLine }}
+    {{ $metadata = replaceRE `^\[!\w+\|` "" $firstLine }}
     {{ $metadata = replaceRE `\].*$` "" $metadata }}
   {{ end }}
 
@@ -26,7 +21,7 @@
           <div class="callout-title-inner">{{ if $metadata }}{{ $metadata }}{{ else }}{{ $type | title }}{{ end }}</div>
       </div>
       <div class="callout-content">
-          {{ $text | safeHTML }}
+          {{ $rest | safeHTML }}
       </div>
   </div>
 {{ else }}
