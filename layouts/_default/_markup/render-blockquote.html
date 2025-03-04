@@ -1,32 +1,33 @@
 {{ $content := .Text }}
 
-<!-- DEBUG: Print raw blockquote content -->
-<p style="color: red; font-weight: bold;">DEBUG: {{ printf "%#v" $content }}</p>
-
-<!-- Strip <p> tags added by Hugo -->
+<!-- Remove surrounding <p> tags added by Hugo -->
 {{ $content = replaceRE "^<p>" "" $content }}
 {{ $content = replaceRE "</p>$" "" $content }}
 
-{{ $calloutRegex := `^\[!(\w+)(?:\|([^\]]+))?\]\s*(.*)` }}
+<!-- Updated regex to correctly extract type, metadata, and title -->
+{{ $calloutRegex := `^\[!(\w+)(?:\|([^\]]+))?\]\s*([^\n]+)?\n*(.*)` }}
 {{ $match := findRE $calloutRegex $content 1 }}
 {{ $type := "" }}
 {{ $metadata := "" }}
+{{ $title := "" }}
 {{ $text := "" }}
 
 {{ if $match }}
   {{ $match = index $match 0 }}
   {{ $type = lower (index (findRE `^\[!(\w+)` $match 1) 0) }}
-  {{ $text = replaceRE $calloutRegex "$3" $content }}
 
   {{ if findRE `\|` $match }}
     {{ $metadata = replaceRE `^\[!\w+\|` "" $match }}
     {{ $metadata = replaceRE `\].*$` "" $metadata }}
   {{ end }}
 
+  {{ $title = replaceRE $calloutRegex "$3" $content }}
+  {{ $text = replaceRE $calloutRegex "$4" $content }}
+
   <div class="callout" data-callout="{{ $type }}" {{ if $metadata }}data-callout-metadata="{{ $metadata }}"{{ end }} data-callout-fold="">
       <div class="callout-title">
           <div class="callout-icon"></div>
-          <div class="callout-title-inner">{{ if $metadata }}{{ $metadata }}{{ else }}{{ $type | title }}{{ end }}</div>
+          <div class="callout-title-inner">{{ $title }}</div>
       </div>
       <div class="callout-content">
           {{ $text | safeHTML }}
