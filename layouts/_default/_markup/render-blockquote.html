@@ -5,7 +5,7 @@
 {{ $content = replaceRE "</p>$" "" $content }}
 
 <!-- Regex to extract type, metadata, title, and content -->
-{{ $calloutRegex := `^\[!(\w+)(?:\|([^\]]+))?\]\s*([^\n]*)\n*(.*)` }}
+{{ $calloutRegex := `^\[!(\w+)(?:\|([^\]]+))?\]` }}
 {{ $match := findRE $calloutRegex $content 1 }}
 {{ $type := "" }}
 {{ $metadata := "" }}
@@ -14,16 +14,18 @@
 
 {{ if $match }}
   {{ $match = index $match 0 }}
-  {{ $type = lower (index (findRE `^\[!(\w+)` $match 1) 0) }}  <!-- ✅ No extra parenthesis -->
+  {{ $type = lower (index (findRE `^\[!(\w+)` $match 1) 0) }}  <!-- ✅ Extracts "note" correctly -->
 
   {{ if findRE `\|` $match }}
     {{ $metadata = replaceRE `^\[!\w+\|` "" $match }}
     {{ $metadata = replaceRE `\].*$` "" $metadata }}
-    {{ $metadata = trim $metadata " " }}  <!-- ✅ Metadata now extracts only "testing" -->
+    {{ $metadata = trim $metadata " " }}  <!-- ✅ Metadata extracts only "testing" -->
   {{ end }}
 
-  {{ $title = trim (replaceRE `^\[!\w+(?:\|[^\]]+)?\]\s*` "" $content) " " }}  <!-- ✅ Extracts only the title -->
-  {{ $text = trim (replaceRE `^\[!\w+(?:\|[^\]]+)?\]\s*[^\n]*\n` "" $content) " " }}  <!-- ✅ Extracts only the content -->
+  {{ $contentWithoutCallout := replaceRE $calloutRegex "" $content }}  <!-- ✅ Removes callout markup -->
+  {{ $lines := split $contentWithoutCallout "\n" }}
+  {{ $title = trim (index $lines 0) " " }}  <!-- ✅ First line is the title -->
+  {{ $text = delimit (after 1 $lines) "\n" }}  <!-- ✅ Remaining lines are the content -->
 
   <div class="callout" data-callout="{{ $type }}" {{ if $metadata }}data-callout-metadata="{{ $metadata }}"{{ end }} data-callout-fold="">
       <div class="callout-title">
