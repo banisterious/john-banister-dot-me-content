@@ -14,7 +14,7 @@
 
 {{ if $match }}
   {{ $match = index $match 0 }}
-  {{ $type = lower (index (findRE `^\[!(\w+)` $match 1) 0) }}  <!-- ✅ Now correctly extracts "note" without [!] -->
+  {{ $type = replaceRE `^\[!(\w+)` "$1" (index (findRE `^\[!(\w+)` $match 1) 0) }}  <!-- ✅ Finally fixes data-callout! -->
 
   {{ if findRE `\|` $match }}
     {{ $metadata = replaceRE `^\[!\w+\|` "" $match }}
