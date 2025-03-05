@@ -79,8 +79,8 @@
             
                 document.addEventListener("DOMContentLoaded", function () {
                     const isLoggedIn = getCookie("patreon_access") === "1";
-                    const patronName = getCookie("patreon_tier") || "Patron";
-                    console.log("🔍 Patreon Login State (from cookies):", isLoggedIn, "Patron Tier:", patronName);
+                    const patronTier = getCookie("patreon_tier") || "None";
+                    console.log("🔍 Patreon Login State (from cookies):", isLoggedIn, "Patron Tier:", patronTier);
             
                     const loginButton = document.getElementById("patreon-login");
                     const logoutButton = document.getElementById("patreon-logout");
@@ -98,8 +98,14 @@
                     } else {
                         console.log("⚠️ One or both buttons not found in the DOM");
                     }
+            
+                    // 🔍 Display Patreon Tier on the Page for Debugging
+                    const tierDebug = document.createElement("div");
+                    tierDebug.innerHTML = `🔍 Your Patreon Tier: ${patronTier}`;
+                    tierDebug.style.cssText = "position: fixed; bottom: 20px; left: 20px; background: #f8f8f8; color: black; padding: 10px 20px; border-radius: 5px; font-size: 14px; font-weight: bold; z-index: 1000;";
+                    document.body.appendChild(tierDebug);
                 });
-            </script>                             
+            </script>  
 
             <nav class="flex items-center gap-x-4">
                 <!-- 🔑 Login Button -->
