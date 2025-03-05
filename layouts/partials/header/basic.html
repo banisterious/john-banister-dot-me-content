@@ -53,9 +53,9 @@
             
                     // Fully delete authentication cookies
                     deleteCookie("patreon_access");
-                    deleteCookie("patreon_name");
+                    deleteCookie("patreon_tier");
             
-                    // Force immediate UI update
+                    // Ensure immediate UI update
                     const loginButton = document.getElementById("patreon-login");
                     const logoutButton = document.getElementById("patreon-logout");
             
@@ -70,22 +70,17 @@
                     logoutMessage.style.cssText = "position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #ffcc00; color: black; padding: 10px 20px; border-radius: 5px; font-size: 16px; font-weight: bold; z-index: 1000;";
                     document.body.appendChild(logoutMessage);
             
-                    // Redirect the user back to the previous page or home
-                    const returnURL = document.referrer && document.referrer.startsWith(window.location.origin)
-                        ? document.referrer
-                        : "/";
-                    console.log("🔄 Redirecting to:", returnURL);
-            
-                    // Delay redirect to allow UI changes to appear
+                    // Redirect the user back to the homepage instead of Patreon login
+                    console.log("🔄 Redirecting to home...");
                     setTimeout(() => {
-                        window.location.href = returnURL;
+                        window.location.href = "/";
                     }, 2000);
                 }
             
                 document.addEventListener("DOMContentLoaded", function () {
                     const isLoggedIn = getCookie("patreon_access") === "1";
-                    const patronName = getCookie("patreon_name") || "Patron";
-                    console.log("🔍 Patreon Login State (from cookies):", isLoggedIn, "Patron Name:", patronName);
+                    const patronName = getCookie("patreon_tier") || "Patron";
+                    console.log("🔍 Patreon Login State (from cookies):", isLoggedIn, "Patron Tier:", patronName);
             
                     const loginButton = document.getElementById("patreon-login");
                     const logoutButton = document.getElementById("patreon-logout");
@@ -104,7 +99,7 @@
                         console.log("⚠️ One or both buttons not found in the DOM");
                     }
                 });
-            </script>                    
+            </script>                             
 
             <nav class="flex items-center gap-x-4">
                 <!-- 🔑 Login Button -->
