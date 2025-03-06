@@ -20,6 +20,10 @@ body {
     font-size: 20px;
 }
 
+.prose {
+    font-size: 1.65rem;
+}
+
 h2 {
     font-size: 150%;
     font-weight:700;
