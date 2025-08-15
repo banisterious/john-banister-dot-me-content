@@ -33,3 +33,18 @@ h1 {
     font-size: 200%;
     font-weight: 400 !important;
 }
+
+/* Underline all links */
+a {
+    text-decoration: underline;
+}
+
+/* Optional: Style links in article content specifically */
+.article-content a {
+    text-decoration: underline;
+}
+
+/* Optional: Remove underline on hover if desired */
+/* a:hover {
+    text-decoration: none;
+} */
